@@ -1,10 +1,13 @@
+package com.bankaccount;
+
+import com.bankaccount.BankAccount;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BankAccountTest {
 
-    private BankAccount account;
+    private BankAccount.BankAccount account;
 
     @BeforeAll
     static void first() {
@@ -13,7 +16,7 @@ class BankAccountTest {
 
     @BeforeEach
     void setup() {
-        account = new BankAccount("Listya", "Tapp", 700, BankAccount.CHECKING);
+        account = new BankAccount.BankAccount("Listya", "Tapp", 700, BankAccount.BankAccount.CHECKING);
         System.out.println("Running test");
     }
 

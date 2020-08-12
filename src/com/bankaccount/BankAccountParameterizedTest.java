@@ -1,26 +1,21 @@
-import com.sun.jdi.connect.Connector;
-import org.junit.jupiter.api.BeforeAll;
+package com.bankaccount;
+
+import com.bankaccount.BankAccount;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BankAccountParameterizedTest {
-    private BankAccount bankAccount;
+    private BankAccount.BankAccount bankAccount;
 
     @BeforeEach
     public void setup() {
-        bankAccount = new BankAccount("Mimin","jono", 1000.00, BankAccount.CHECKING);
+        bankAccount = new BankAccount.BankAccount("Mimin","jono", 1000.00, BankAccount.BankAccount.CHECKING);
         System.out.println("Running a test");
     }
 
