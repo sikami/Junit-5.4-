@@ -24,7 +24,7 @@ class UtilitiesTest {
     @Test
     void converter() {
         Utilities utilities = new Utilities();
-        assertEquals(181, utilities.converter(6,0));
+        assertEquals(-1, utilities.converter(6,0));
     }
 
     @Test
