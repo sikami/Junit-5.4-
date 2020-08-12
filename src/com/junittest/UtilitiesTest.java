@@ -7,11 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class UtilitiesTest {
 
     @Test
-    void charArrays() {
+    void everyNthChar() {
         char[] input = {'h', 'e', 'l', 'l', 'o'};
         char[] result = {'e', 'l'};
         Utilities utilities = new Utilities();
-        assertArrayEquals(result, utilities.charArrays(input, 2));
+        assertArrayEquals(result, utilities.everyNthChar(input, 2));
+        char[] output = utilities.everyNthChar(new char[] {'h', 'e', 'l', 'l', 'o'}, 8);
+        assertArrayEquals(output, utilities.everyNthChar(input, 8));
     }
 
     @Test
@@ -35,6 +37,13 @@ class UtilitiesTest {
 
     @Test
     void nullIfOddLength() {
-        fail("About to be implemented");
+        //pass a string with even length
+        Utilities utilities = new Utilities();
+        String nonNull = utilities.nullIfOddLength("123456");
+        assertNotNull(nonNull);
+        String nulls = utilities.nullIfOddLength("1");
+        assertNull(nulls);
+
+        //pass a string with odd length
     }
 }

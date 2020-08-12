@@ -5,7 +5,7 @@ public class Utilities {
     //return a char array every nth char
     // when length of source array < n, return source array
 
-    public char[] charArrays(char[] sourceArray, int n) {
+    public char[] everyNthChar(char[] sourceArray, int n) {
         if(sourceArray.length < n) {
             return sourceArray;
         }
