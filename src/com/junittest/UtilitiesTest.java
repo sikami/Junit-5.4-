@@ -13,12 +13,18 @@ class UtilitiesTest {
 
     @Test
     void removePairs() {
-        fail("About to be implemented");
+        Utilities utilities = new Utilities();
+        String expected = "ABCDEF";
+        String test = "AABCDDEFF";
+        assertEquals(expected, utilities.removePairs(test));
+        assertEquals("ABCABDEF", utilities.removePairs("ABCCABDEEF"));
+
     }
 
     @Test
     void converter() {
-        fail("About to be implemented");
+        Utilities utilities = new Utilities();
+        assertEquals(181, utilities.converter(6,0));
     }
 
     @Test

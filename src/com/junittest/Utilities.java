@@ -28,10 +28,14 @@ public class Utilities {
 
         StringBuilder stringBuilder = new StringBuilder();
         char[] string = source.toCharArray();
-        for(int i = 0; i < string.length; i++) {
-            stringBuilder.append(string[i]);
+        for(int i = 0; i < string.length - 1; i++) {
+            if(string[i] != string[i+1]) {
+                stringBuilder.append(string[i]);
+            }
         }
+        stringBuilder.append(string[string.length - 1]);
         return stringBuilder.toString();
+
     }
 
     public int converter(int a, int b) {
