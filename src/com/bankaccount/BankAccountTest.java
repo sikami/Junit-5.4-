@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BankAccountTest {
 
-    private BankAccount.BankAccount account;
+    private BankAccount.BankAccounts account;
 
     @BeforeAll
     static void first() {
@@ -16,7 +16,7 @@ class BankAccountTest {
 
     @BeforeEach
     void setup() {
-        account = new BankAccount.BankAccount("Listya", "Tapp", 700, BankAccount.BankAccount.CHECKING);
+        account = new BankAccount.BankAccounts("Listya", "Tapp", 700, BankAccount.BankAccounts.CHECKING);
         System.out.println("Running test");
     }
 
