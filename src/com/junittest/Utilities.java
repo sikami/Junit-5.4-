@@ -15,14 +15,19 @@ public class Utilities {
         int index = 0;
 
         for(int i = n-1; i < sourceArray.length; i++) {
-            result[index++] = sourceArray[i];
+            try {
+                result[index++] = sourceArray[i];
+            } catch (ArrayIndexOutOfBoundsException e) {
+                break;
+            }
+
         }
         return result;
     }
 
     public String removePairs(String source) {
         //if length < 2, there wont be pairs
-        if(source.length() < 2) {
+        if(source == null || source.length() < 2) {
             return source;
         }
 

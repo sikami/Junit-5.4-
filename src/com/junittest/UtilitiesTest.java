@@ -8,7 +8,10 @@ class UtilitiesTest {
 
     @Test
     void charArrays() {
-        fail("About to be implemented");
+        char[] input = {'h', 'e', 'l', 'l', 'o'};
+        char[] result = {'e', 'l'};
+        Utilities utilities = new Utilities();
+        assertArrayEquals(result, utilities.charArrays(input, 2));
     }
 
     @Test
@@ -18,6 +21,9 @@ class UtilitiesTest {
         String test = "AABCDDEFF";
         assertEquals(expected, utilities.removePairs(test));
         assertEquals("ABCABDEF", utilities.removePairs("ABCCABDEEF"));
+        assertNull("did not get null argument when string is passed", utilities.removePairs(null));
+        assertEquals("A", utilities.removePairs("A"));
+        assertEquals("", utilities.removePairs(""));
 
     }
 
