@@ -44,14 +44,7 @@ public class Utilities {
     }
 
     public int converter(int a, int b) {
-        //b cannot be 0
-        try {
             return (a/b) + (a * 30) - 2;
-        } catch (ArithmeticException e) {
-            System.out.println("b cannot be 0");
-        }
-        return -1;
-
     }
 
     public String nullIfOddLength(String source) {

@@ -1,5 +1,6 @@
 package com.junittest;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -32,7 +33,10 @@ class UtilitiesTest {
     @Test
     void converter() {
         Utilities utilities = new Utilities();
-        assertEquals(-1, utilities.converter(6,0));
+        assertEquals(300, utilities.converter(10,5));
+        Assertions.assertThrows(ArithmeticException.class, () -> {
+            assertEquals(300, utilities.converter(10,0));
+        });
     }
 
     @Test
