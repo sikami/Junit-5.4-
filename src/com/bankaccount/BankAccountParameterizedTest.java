@@ -11,11 +11,11 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BankAccountParameterizedTest {
-    private BankAccount.BankAccount bankAccount;
+    private BankAccount.BankAccounts bankAccount;
 
     @BeforeEach
     public void setup() {
-        bankAccount = new BankAccount.BankAccount("Mimin","jono", 1000.00, BankAccount.BankAccount.CHECKING);
+        bankAccount = new BankAccount.BankAccounts("Mimin","jono", 1000.00, BankAccount.BankAccounts.CHECKING);
         System.out.println("Running a test");
     }
 

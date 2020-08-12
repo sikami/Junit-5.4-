@@ -1,7 +1,7 @@
 package com.bankaccount;
 
 public class BankAccount {
-    public static class BankAccount {
+    public static class BankAccounts {
         private String firstName;
         private String lastName;
         private double balance;
@@ -11,7 +11,7 @@ public class BankAccount {
 
         private int accountType;
 
-        public BankAccount(String firstName, String lastName, double balance, int typeOfAccount) {
+        public BankAccounts(String firstName, String lastName, double balance, int typeOfAccount) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.balance = balance;
