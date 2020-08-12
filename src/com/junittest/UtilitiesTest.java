@@ -1,17 +1,24 @@
 package com.junittest;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UtilitiesTest {
 
+    private Utilities utilities;
+
+    @BeforeEach
+    public void setup() {
+        utilities = new Utilities();
+    }
+
     @Test
     void everyNthChar() {
         char[] input = {'h', 'e', 'l', 'l', 'o'};
         char[] result = {'e', 'l'};
-        Utilities utilities = new Utilities();
         assertArrayEquals(result, utilities.everyNthChar(input, 2));
         char[] output = utilities.everyNthChar(new char[] {'h', 'e', 'l', 'l', 'o'}, 8);
         assertArrayEquals(output, utilities.everyNthChar(input, 8));
@@ -19,12 +26,11 @@ class UtilitiesTest {
 
     @Test
     void removePairs() {
-        Utilities utilities = new Utilities();
         String expected = "ABCDEF";
         String test = "AABCDDEFF";
         assertEquals(expected, utilities.removePairs(test));
         assertEquals("ABCABDEF", utilities.removePairs("ABCCABDEEF"));
-        assertNull("did not get null argument when string is passed", utilities.removePairs(null));
+        assertNull(utilities.removePairs(null));
         assertEquals("A", utilities.removePairs("A"));
         assertEquals("", utilities.removePairs(""));
 
@@ -32,7 +38,6 @@ class UtilitiesTest {
 
     @Test
     void converter() {
-        Utilities utilities = new Utilities();
         assertEquals(300, utilities.converter(10,5));
         Assertions.assertThrows(ArithmeticException.class, () -> {
             assertEquals(300, utilities.converter(10,0));
@@ -42,12 +47,11 @@ class UtilitiesTest {
     @Test
     void nullIfOddLength() {
         //pass a string with even length
-        Utilities utilities = new Utilities();
         String nonNull = utilities.nullIfOddLength("123456");
         assertNotNull(nonNull);
-        String nulls = utilities.nullIfOddLength("1");
-        assertNull(nulls);
 
         //pass a string with odd length
+        String nulls = utilities.nullIfOddLength("1");
+        assertNull(nulls);
     }
 }
